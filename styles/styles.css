@@ -1,0 +1,19 @@
+body {
+  background-color: rgb(203, 188, 170);
+}
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 113px);
+  grid-template-rows:repeat(3, 112px);
+  grid-gap: 0px;
+}
+
+li {
+  background-color: white;
+  list-style: none;
+  border:1px solid black;
+}
