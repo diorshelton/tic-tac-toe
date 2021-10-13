@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(203, 188, 170);
+  background-color: rgb(191, 190, 188);
 }
 .container {
   display: flex;
@@ -13,7 +13,10 @@ body {
 }
 
 li {
-  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(254, 254, 254);
   list-style: none;
   border:1px solid black;
 }
