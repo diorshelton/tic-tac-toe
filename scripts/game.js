@@ -8,12 +8,12 @@ class Game {
 
   }
   startGame() {
-    
+
   }
   takeTurn() {
 
   }
   resetGame() {
 
-  }  
+  }
 };
