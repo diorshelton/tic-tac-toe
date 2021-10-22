@@ -14,5 +14,5 @@ class Player {
   };
 }
 
-let exPlayer = new Player("x", "❌");
-let ohPlayer = new Player("o", "⭕️");
+let exPlayer = new Player('ex', "❌");
+let ohPlayer = new Player('oh', "⭕️");
