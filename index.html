@@ -11,27 +11,32 @@
   <section class="main" id="player1">
     <h2>Player ❌</h2>
     <p>Wins:<span class="player-wins"></span></p>
+    <br></br>
+    <button class="start-stop" id="start">Start Game</button>
+    <br></br>
+    <!-- <button class="start-stop" id="stop">Stop Game</button> -->
   </section>
   <section class="main" id="game-board">
-  <h1 class="turn-notification">It's <span class="player-turn">*player*</span>'s turn</h1>
+  <h1 class="turn-notification">It's <span class="player-turn">*player*</span> 's turn</h1>
     <ul class="grid">
-      <li class="box box1"></li>
-      <li class="box box2"></li>
-      <li class="box box3"></li>
-      <li class="box box4"></li>
-      <li class="box box5"></li>
-      <li class="box box6"></li>
-      <li class="box box7"></li>
-      <li class="box box8"></li>
-      <li class="box box9"></li>
+      <li id="box1"></li>
+      <li id="box2"></li>
+      <li id="box3"></li>
+      <li id="box4"></li>
+      <li id="box5"></li>
+      <li id="box6"></li>
+      <li id="box7"></li>
+      <li id="box8"></li>
+      <li id="box9"></li>
     </ul>
   </section>
   <section class="main" id="player2">
     <h2>Player ⭕️</h2>
     <p>Wins:<span class="player-wins"></span></p>
   </section>
+  
 </body>
-<script type="text/javascript" src="scripts/main.js"></script>
-<script type="text/javascript" src="scripts/game.js"></script>
-<script type="text/javascript" src="scripts/player.js"></script>
+<script type="text/javascript" src="scripts/player.js" defer></script>
+<script type="text/javascript" src="scripts/game.js" defer></script>
+<script type="text/javascript" src="scripts/main.js" defer></script>
 </html>

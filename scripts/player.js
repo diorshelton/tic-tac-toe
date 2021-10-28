@@ -3,6 +3,7 @@ class Player {
     this.id = id;
     this.token = token;
     this.wins =  [];
+    this.gameboardSpaces =[];
   }
   saveWinsToStorage() {
     let stringifiedWins = JSON.stringify(this.wins);
@@ -13,6 +14,3 @@ class Player {
     return retrievedWins;
   };
 }
-
-let exPlayer = new Player('ex', "❌");
-let ohPlayer = new Player('oh', "⭕️");
