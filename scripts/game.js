@@ -39,11 +39,12 @@ class Game {
     this.gameboard[location] = Player.token;
     let square = document.getElementById(location);
      square.innerText = Player.token;
-
     this.checkForWin();
   }
   resetGame() {
   }
-  
+  isADraw() {
+    // Check board for a draw condition
+  }
 };
  

@@ -7,7 +7,6 @@ let ohPlayer = new Player('oh', '⭕️');
 let ticTacToe = new Game (exPlayer, ohPlayer);
 
 // Event Listeners
-
 gameBoard.addEventListener("click", selectBox);
 
 function selectBox(e) {
