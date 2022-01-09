@@ -21,30 +21,36 @@ class Game {
         return false;
       };
   };
-  checkForWin() {
-    let gameMessage = document.querySelector(".message-text");
+  gameStatus() {
+    // updates gameMessages to match game state
     const isEven = ticTacToe.totalTurns % 2 === 0;
-   
     if (this.isAWinner()) {
-      gameMessage.innerText = `${isEven ? this.playerOne.token : this.playerTwo.token} won`;
+      gameMessages.innerText = `${isEven ? this.playerTwo.token : this.playerOne.token} won`;
     return;
+    } else if (this.isADraw()) {
+      gameMessages.innerText = "DRAW !"
+    } else {
+      gameMessages.innerText = `It's ${isEven ? this.playerOne.token : this.playerTwo.token}'s turn`;
+      
     }
-    gameMessage.innerText = `It's ${isEven ? this.playerTwo.token : this.playerOne.token}'s turn`
-    this.totalTurns ++;
-  };
+  }
   takeTurn(Player, location) {
     if (this.gameboard[location]) {
-      return
+      return;
     }
     this.gameboard[location] = Player.token;
     let square = document.getElementById(location);
-     square.innerText = Player.token;
-    this.checkForWin();
+    square.innerText = Player.token;
+    this.totalTurns++;
+    this.gameStatus();
+   }
+  isADraw() {
+    if (this.totalTurns === 9 && this.isAWinner() === false) {
+      // gameMessages.innerText = "DRAW !"
+      return true;
+    }
   }
   resetGame() {
   }
-  isADraw() {
-    // Check board for a draw condition
-  }
+  
 };
- 

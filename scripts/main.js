@@ -1,6 +1,6 @@
 let gameBoard = document.querySelector('.grid');
 let gameMessages = document.querySelector('.message-text');
-let exWinTally = document.querySelector(".ex-player-wins")
+let exWinTally = document.querySelector(".ex-player-wins");
 let ohWinTally = document.querySelector(".oh-player-wins");
 let exPlayer = new Player('ex', '❌');
 let ohPlayer = new Player('oh', '⭕️');
