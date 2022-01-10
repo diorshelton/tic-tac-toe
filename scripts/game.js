@@ -26,12 +26,12 @@ class Game {
     const isEven = ticTacToe.totalTurns % 2 === 0;
     if (this.isAWinner()) {
       gameMessages.innerText = `${isEven ? this.playerTwo.token : this.playerOne.token} won`;
+      this.incrementWinCounter();
     return;
     } else if (this.isADraw()) {
       gameMessages.innerText = "DRAW !"
     } else {
       gameMessages.innerText = `It's ${isEven ? this.playerOne.token : this.playerTwo.token}'s turn`;
-      
     }
   }
   takeTurn(Player, location) {
@@ -46,11 +46,15 @@ class Game {
    }
   isADraw() {
     if (this.totalTurns === 9 && this.isAWinner() === false) {
-      // gameMessages.innerText = "DRAW !"
       return true;
     }
   }
+  incrementWinCounter() {
+    const isEven = this.totalTurns % 2 ===0;
+    isEven? this.playerOne.wins ++ : this.playerTwo.wins ++;
+    exWins.innerText = ohPlayer.wins;
+    ohWins.innerText = exPlayer.wins;
+  }
   resetGame() {
   }
-  
 };
