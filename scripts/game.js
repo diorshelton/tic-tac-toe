@@ -27,34 +27,35 @@ class Game {
     if (this.isAWinner()) {
       gameMessages.innerText = `${isEven ? this.playerTwo.token : this.playerOne.token} won!`;
       this.incrementWinCounter();
+      gameBoard.removeEventListener("click", placeToken);
     return;
     } else if (this.isADraw()) {
       gameMessages.innerText = "DRAW !"
     } else {
       gameMessages.innerText = `It's ${isEven ? this.playerOne.token : this.playerTwo.token}'s turn`;
-    }
+    };
   };
   takeTurn(Player, location) {
     if (this.gameboard[location]) {
       return;
-    }
+    };
     this.gameboard[location] = Player.token;
     let square = document.getElementById(location);
     square.innerText = Player.token;
     this.totalTurns++;
     this.gameStatus();
-   };
+  };
   isADraw() {
     if (this.totalTurns === 9 && this.isAWinner() === false) {
       return true;
-    }
-  }
+    };
+  };
   incrementWinCounter() {
     const isEven = this.totalTurns % 2 ===0;
     isEven? this.playerOne.wins ++ : this.playerTwo.wins ++;
     exWins.innerText = ohPlayer.wins;
     ohWins.innerText = exPlayer.wins;
-  }
+  };
   resetGame() {
     this.gameboard = this.gameboard = ["","","","","","","","",""];
     this.totalTurns = 0;
@@ -63,7 +64,9 @@ class Game {
       if (!i % 2 === 0) {
       gameBoardNodes[i].innerText = "";
       gameMessages.innerText = "Let's Play !"
+      gameBoard.addEventListener("click", placeToken);
       }; 
     };
-  }
+  };
 };
+

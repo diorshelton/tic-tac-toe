@@ -17,5 +17,5 @@ function placeToken(e) {
   if (e.target.innerText === "") {
     const isEven = ticTacToe.totalTurns % 2 === 0;
     ticTacToe.takeTurn(isEven ? exPlayer : ohPlayer, e.target.id)
-  }
-}
+  };
+};
