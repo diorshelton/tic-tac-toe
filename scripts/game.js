@@ -25,7 +25,7 @@ class Game {
     // updates gameMessages to match game state
     const isEven = ticTacToe.totalTurns % 2 === 0;
     if (this.isAWinner()) {
-      gameMessages.innerText = `${isEven ? this.playerTwo.token : this.playerOne.token} won`;
+      gameMessages.innerText = `${isEven ? this.playerTwo.token : this.playerOne.token} won!`;
       this.incrementWinCounter();
     return;
     } else if (this.isADraw()) {
@@ -33,7 +33,7 @@ class Game {
     } else {
       gameMessages.innerText = `It's ${isEven ? this.playerOne.token : this.playerTwo.token}'s turn`;
     }
-  }
+  };
   takeTurn(Player, location) {
     if (this.gameboard[location]) {
       return;
@@ -43,7 +43,7 @@ class Game {
     square.innerText = Player.token;
     this.totalTurns++;
     this.gameStatus();
-   }
+   };
   isADraw() {
     if (this.totalTurns === 9 && this.isAWinner() === false) {
       return true;
@@ -56,5 +56,14 @@ class Game {
     ohWins.innerText = exPlayer.wins;
   }
   resetGame() {
+    this.gameboard = this.gameboard = ["","","","","","","","",""];
+    this.totalTurns = 0;
+    const gameBoardNodes = gameBoard.childNodes;
+    for (let i = 0; i < gameBoardNodes.length; i++) {
+      if (!i % 2 === 0) {
+      gameBoardNodes[i].innerText = "";
+      gameMessages.innerText = "Let's Play !"
+      }; 
+    };
   }
 };

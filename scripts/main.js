@@ -11,9 +11,9 @@ exWins.innerText = ohPlayer.wins;
 ohWins.innerText = exPlayer.wins;
 
 // Event Listeners
-gameBoard.addEventListener("click", selectBox);
+gameBoard.addEventListener("click", placeToken);
 
-function selectBox(e) {
+function placeToken(e) {
   if (e.target.innerText === "") {
     const isEven = ticTacToe.totalTurns % 2 === 0;
     ticTacToe.takeTurn(isEven ? exPlayer : ohPlayer, e.target.id)
