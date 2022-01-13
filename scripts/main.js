@@ -7,8 +7,8 @@ let ohPlayer = new Player('oh', '⭕️');
 let ticTacToe = new Game (exPlayer, ohPlayer);
 let ohWins = document.querySelector(".oh-player-wins");
 let exWins = document.querySelector(".ex-player-wins");
-exWins.innerText = ohPlayer.wins;
-ohWins.innerText = exPlayer.wins;
+exWins.innerText = ohPlayer.retrieveWins();
+ohWins.innerText = exPlayer.retrieveWins();
 
 // Event Listeners
 gameBoard.addEventListener("click", placeToken);

@@ -28,6 +28,7 @@ class Game {
       gameMessages.innerText = `${isEven ? this.playerTwo.token : this.playerOne.token} won!`;
       this.incrementWinCounter();
       gameBoard.removeEventListener("click", placeToken);
+      this.resetGame();
     return;
     } else if (this.isADraw()) {
       gameMessages.innerText = "DRAW !"
@@ -55,18 +56,26 @@ class Game {
     isEven? this.playerOne.wins ++ : this.playerTwo.wins ++;
     exWins.innerText = ohPlayer.wins;
     ohWins.innerText = exPlayer.wins;
+    this.saveWinData();
   };
   resetGame() {
-    this.gameboard = this.gameboard = ["","","","","","","","",""];
-    this.totalTurns = 0;
-    const gameBoardNodes = gameBoard.childNodes;
-    for (let i = 0; i < gameBoardNodes.length; i++) {
-      if (!i % 2 === 0) {
-      gameBoardNodes[i].innerText = "";
-      gameMessages.innerText = "Let's Play !"
-      gameBoard.addEventListener("click", placeToken);
-      }; 
+    setTimeout(() => {
+      this.gameboard = this.gameboard = ["","","","","","","","",""];
+      this.totalTurns = 0;
+      const gameBoardNodes = gameBoard.childNodes;
+      for (let i = 0; i < gameBoardNodes.length; i++) {
+        if (!i % 2 === 0) {
+        gameBoardNodes[i].innerText = "";
+        gameMessages.innerText = "Let's Play !"
+        this.saveWinData();
+      };
     };
+        gameBoard.addEventListener("click", placeToken);
+      }, 3000);
   };
+  saveWinData() {
+    exPlayer.saveWinsToStorage();
+    ohPlayer.saveWinsToStorage();
+  }
 };
 
